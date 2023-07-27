@@ -25,3 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer utilities {
+  ::-webkit-scrollbar-thumb {
+    boarder-radius: 14px;
+  }
+}
