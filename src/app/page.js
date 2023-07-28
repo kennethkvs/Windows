@@ -10,11 +10,8 @@ export default function Home() {
   const tempData = [].concat(...new Array(20).fill(projectNames));
   return (
     <main className="flex min-h-screen flex-col justify-center ">
-      <AzureStatus />
-      <RepoStatus />
-      <EnvironmentStatus />
-      {/* Render 10 cards */}
-      <div className="flex h-[900px] items-center gap-2 overflow-y-hidden scroll-smooth">
+      {/* {TODO: figure out height auto expading} */}
+      <div className="flex h-[950px] items-center gap-5 overflow-y-hidden scroll-smooth">
         {tempData.map((value, index) => (
           <Card key={index} name={value} />
         ))}

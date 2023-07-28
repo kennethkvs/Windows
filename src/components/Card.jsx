@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { Sections } from "./Sections";
+import { AzureStatus } from "./AzureStatus";
+import { RepoStatus } from "./RepoStatus";
+import { EnvironmentStatus } from "./EnvironmentStatus";
 
 export const Card = (props) => {
   const [rotate, setRotate] = useState(false);
@@ -32,10 +35,16 @@ export const Card = (props) => {
   ];
 
   return (
-    <div className=" flex flex-col items-center">
+    <div className="flex flex-col items-center">
       {rotate && (
-        <motion.div className="mb-1 min-h-[700px] min-w-[800px] bg-slate-400">
-          hello world
+        <motion.div className="mb-1 flex min-h-[700px] min-w-[800px] flex-col justify-evenly bg-slate-400">
+          <div className="flex justify-evenly">
+            <AzureStatus />
+            <RepoStatus />
+          </div>
+          <div className="flex content-center justify-evenly">
+            <EnvironmentStatus />
+          </div>
         </motion.div>
       )}
       <motion.div
@@ -50,19 +59,20 @@ export const Card = (props) => {
           scale: rotate ? 1 : 1,
         }}
       >
-        <div className="border-separateflex-row flex min-h-[200px] min-w-[800px] rounded bg-slate-100 text-black">
+        <div className="flex min-h-[200px] min-w-[800px] border-separate flex-row rounded bg-slate-100 text-black">
           <div className=" mb-12 ml-6 mr-6 mt-12 w-1/12 place-self-center text-center">
             <div className="rounded bg-green-100 text-center text-sm text-green-500 outline outline-1 outline-green-500">
               {props.name}
             </div>
           </div>
-          <div className="mr-[1px] w-3/12 border-l-2 border-black">
+          <div className="w-3/12 border-l-2 border-black">
             <Sections name="Github Repo" cols="2" data={ghData} />
           </div>
-          <div className="mr-[1px] w-3/12 border-l-2 border-black">
+          <div className="w-3/12 border-l-2 border-black">
             <Sections name="Sprint #11" cols="2" data={ticketData} />
           </div>
-          <div className="mr-[1px] w-5/12 border-l-2 border-black">
+          <div className="w-5/12 border-l-2 border-black">
+            {/* TODO: fix cols not working */}
             <Sections name="Environments" cols="3" data={envData} />
           </div>
         </div>

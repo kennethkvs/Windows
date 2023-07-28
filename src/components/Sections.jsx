@@ -7,11 +7,12 @@ const red = ["rejected", "failed", "late", "down"];
 
 export const Sections = (props) => {
   return (
-    <>
+    <div className="m-1">
       <div className="text-center">{props.name}</div>
-      <div className={`grid grid-cols-${props.cols}`}>
+      <div className={`grid grid-cols-${props.cols} gap-1`}>
         {props.data.map((data, index) => (
           <Status
+            key={index}
             title={data.title}
             color={
               green.includes(data.status)
@@ -23,6 +24,6 @@ export const Sections = (props) => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
