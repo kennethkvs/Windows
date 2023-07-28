@@ -1,9 +1,17 @@
 import React from "react";
 
 export const Status = (props) => {
+  const colorVariants = {
+    green: "bg-green-100 text-green-700 outline-green-500",
+    yellow: "bg-yellow-100 text-yellow-700 outline-yellow-500",
+    red: "bg-red-100 text-red-500 outline-red-500",
+  };
+
   return (
     <div
-      className={`bg-${props.color}-100 flex max-h-20 flex-col justify-evenly rounded text-center text-${props.color}-500 outline outline-1 outline-${props.color}-500`}
+      className={`${
+        colorVariants[props.color]
+      } flex max-h-20 flex-col justify-evenly rounded text-center  outline outline-1`}
     >
       <p className="text-xs">{props.title}</p>
     </div>
