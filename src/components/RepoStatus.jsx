@@ -18,7 +18,7 @@ export const RepoStatus = (url) => {
       <a href={"https://github.com/NPXInnovation/npxai-v2"}>
         <GithubLogo size={32} />
       </a>
-      <h1>
+      <h1 className="text-green-500">
         ABC#123
         <div className={`flex ${color(testData.Actions[0].Status)}`}>
           <p>
@@ -27,7 +27,7 @@ export const RepoStatus = (url) => {
           <p> Build & Test</p>
         </div>
       </h1>
-      <h2>
+      <h2 className="text-red-500">
         F#000
         <div className={`flex ${color(testData.Actions[1].Status)}`}>
           <p>
@@ -36,6 +36,21 @@ export const RepoStatus = (url) => {
           <p> Test Deploy</p>
         </div>
       </h2>
+      <h3 className=" text-yellow-500">
+        H#332
+        <div className="flex">
+          <p className="text-green-500">
+            <ArrowElbowDownRight size={16} />
+          </p>
+          <p className="text-green-500"> Build</p>
+        </div>
+        <div className="flex">
+          <p className="text-red-500">
+            <ArrowElbowDownRight size={16} />
+          </p>
+          <p className="text-red-500">Test</p>
+        </div>
+      </h3>
     </div>
   );
 };
