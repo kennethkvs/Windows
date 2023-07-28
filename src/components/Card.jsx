@@ -11,7 +11,7 @@ export const Card = (props) => {
       whileHover={{ scale: 1.1 }}
     >
       <div className="flex min-h-[200px] min-w-[800px] border-separate rotate-[270deg] flex-row rounded bg-slate-100 text-black">
-        <div className=" mb-12 ml-6 mr-6 mt-12 w-1/12 text-center">
+        <div className=" mb-12 ml-6 mr-6 mt-12 w-1/12 place-self-center text-center">
           <div className="rounded bg-green-100 text-center text-sm text-green-500 outline outline-1 outline-green-500">
             {props.name}
           </div>
