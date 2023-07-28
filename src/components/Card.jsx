@@ -1,8 +1,35 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { Status } from "@/components/Status";
+import { Sections } from "./Sections";
 
 export const Card = (props) => {
+  const ghData = [
+    { title: "PR #12", status: "approved" },
+    { title: "PR #13", status: "rejected" },
+    { title: "PR #14", status: "pending" },
+    { title: "CLIENT->DEMO", status: "completed" },
+    { title: "PR:CLIENT->DEMO", status: "running" },
+    { title: "PR:MIGRATE->DEMO", status: "failed" },
+    { title: "PR:SERVER->DEMO", status: "completed" },
+    { title: "SCHEMA->DEMO", status: "failed" },
+    { title: "SERVER->DEMO", status: "completed" },
+  ];
+  const ticketData = [
+    { title: "Ticket #1", status: "done" },
+    { title: "Ticket #2", status: "working" },
+    { title: "Ticket #3", status: "done" },
+    { title: "Ticket #4", status: "late" },
+    { title: "Ticket #5", status: "working" },
+  ];
+  const envData = [
+    { title: "Dev #1", status: "down" },
+    { title: "Dev #2", status: "up" },
+    { title: "Dev #3", status: "up" },
+    { title: "Demo #1", status: "issue" },
+    { title: "Demo #2", status: "down" },
+    { title: "Production", status: "up" },
+  ];
   return (
     <motion.div
       className="mx-[-300px]"
@@ -16,24 +43,14 @@ export const Card = (props) => {
             {props.name}
           </div>
         </div>
-        <div className="grid-flow-column mr-[1px] grid w-3/12 grid-cols-2 gap-2 p-2 outline outline-1">
-          <Status text1="Github Actions" text2="Build & Test" color="green" />
-          <Status
-            text1="Github Actions"
-            text2="Deploy to Demo"
-            color="yellow"
-          />
-          <Status text1="Github Actions" text2="Deploy to Prod" color="red" />
-          <Status text1="Pull Request" text2="#33" color="red" />
+        <div className="mr-[1px] w-3/12 border-l-2 border-black">
+          <Sections name="Github Repo" cols="2" data={ghData} />
         </div>
-        <div className="grid-flow-column mr-[1px] grid w-3/12 grid-cols-2 gap-2 p-2 outline outline-1">
-          <Status text1="Sprint" text2="Ticket #1" color="green" />
-          <Status text1="Sprint" text2="Ticket #2" color="green" />
+        <div className="mr-[1px] w-3/12 border-l-2 border-black">
+          <Sections name="Sprint #11" cols="2" data={ticketData} />
         </div>
-        <div className="grid-flow-column mr-[1px] grid w-5/12 grid-cols-3 gap-2 p-2 outline outline-1">
-          <Status text1="Environment" text2="Dev" color="green" />
-          <Status text1="Environment" text2="Demo" color="yellow" />
-          <Status text1="Environment" text2="Prod" color="green" />
+        <div className="mr-[1px] w-5/12 border-l-2 border-black">
+          <Sections name="Environments" cols="3" data={envData} />
         </div>
       </div>
     </motion.div>
