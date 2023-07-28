@@ -2,6 +2,7 @@
 
 import { Card } from "@/components/Card";
 import { RepoStatus } from "@/components/RepoStatus";
+import { AzureStatus } from "@/components/AzureStatus"
 
 export default function Home() {
   const numCards = 100;
@@ -12,6 +13,7 @@ export default function Home() {
         <Card key={i} />
       ))} */}
       <RepoStatus/>
+      <AzureStatus/>
     </main>
   );
 }
