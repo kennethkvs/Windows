@@ -18,11 +18,6 @@ export const EnvironmentStatus = () => {
     ],
   };
 
-  const LineChart = new Chart("chart", {
-    type: "line",
-    data: data,
-  });
-
   const data2 = {
     labels: ["20-12", "21-12", "22-12", "23-12", "24-12", "25-12", "26-12"],
     datasets: [
@@ -37,7 +32,7 @@ export const EnvironmentStatus = () => {
   };
 
   return (
-    <div className="box-border h-96 w-96 border-4 p-4">
+    <div className="box-border h-fit w-96 border-4 p-4">
       <ChartLine size={32} />
       <Line data={data} />
       <Bar data={data2} />

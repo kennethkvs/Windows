@@ -1,6 +1,7 @@
 import React from "react";
 import { WindowsLogo } from "@phosphor-icons/react";
 import { Ticket } from "@phosphor-icons/react";
+import * as Progress from "@radix-ui/react-progress";
 
 export const AzureStatus = (url) => {
   return (
@@ -12,7 +13,6 @@ export const AzureStatus = (url) => {
       >
         <WindowsLogo size={32} />
       </a>
-
       <div className={"flex text-green-500"}>
         <p>
           <Ticket size={24} />
@@ -25,6 +25,21 @@ export const AzureStatus = (url) => {
         </p>
         <p> Sprint Ticket #2</p>
       </div>
+      <div className={"flex text-yellow-500"}>
+        <p>
+          <Ticket size={24} />
+        </p>
+        <p> Sprint Ticket #3</p>
+      </div>
+      <Progress.Root
+        className="relative h-4 w-32 overflow-hidden bg-white"
+        value={33}
+      >
+        <Progress.Indicator
+          className="ease-[cubic-bezier(0.65, 0, 0.35, 1)] h-full w-full bg-yellow-400 transition-transform duration-[660ms]"
+          style={{ transform: `translateX(-${100 - 33}%)` }}
+        />
+      </Progress.Root>
     </div>
   );
 };
