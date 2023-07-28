@@ -6,17 +6,19 @@ import { AzureStatus } from "@/components/AzureStatus";
 import { EnvironmentStatus } from "@/components/EnvironmentStatus";
 
 export default function Home() {
-  const numCards = 5;
   const projectNames = ["NPXAI", "Xpress", "ModX", "Echo", "AtomiX"];
+  const tempData = [].concat(...new Array(20).fill(projectNames));
   return (
-    <main className="flex min-h-screen items-center justify-between gap-8 overflow-y-hidden p-12">
+    <main className="flex min-h-screen flex-col justify-center ">
       <AzureStatus />
       <RepoStatus />
       <EnvironmentStatus />
       {/* Render 10 cards */}
-      {Array.from(Array(numCards).keys()).map((i) => (
-        <Card key={i} name={projectNames[i]} />
-      ))}
+      <div className="flex h-[900px] items-center gap-2 overflow-y-hidden scroll-smooth">
+        {tempData.map((value, index) => (
+          <Card key={index} name={value} />
+        ))}
+      </div>
     </main>
   );
 }
