@@ -14,43 +14,54 @@ export const RepoStatus = (url) => {
   const color = (status) => (status ? "text-green-500" : "text-red-500");
 
   return (
-    <div className="box-border h-64 w-64 border-4 p-4">
-      <a href={"https://github.com/NPXInnovation/npxai-v2"}>
-        <GithubLogo size={32} />
-      </a>
-      <h1 className="text-green-500">
-        ABC#123
-        <div className={`flex ${color(testData.Actions[0].Status)}`}>
-          <p>
-            <ArrowElbowDownRight size={16} />
-          </p>
-          <p> Build & Test</p>
-        </div>
-      </h1>
-      <h2 className="text-red-500">
-        F#000
-        <div className={`flex ${color(testData.Actions[1].Status)}`}>
-          <p>
-            <ArrowElbowDownRight size={16} />
-          </p>
-          <p> Test Deploy</p>
-        </div>
-      </h2>
-      <h3 className=" text-yellow-500">
-        H#332
-        <div className="flex">
-          <p className="text-green-500">
-            <ArrowElbowDownRight size={16} />
-          </p>
-          <p className="text-green-500"> Build</p>
-        </div>
-        <div className="flex">
-          <p className="text-red-500">
-            <ArrowElbowDownRight size={16} />
-          </p>
-          <p className="text-red-500">Test</p>
-        </div>
-      </h3>
+    <div className="h-fit w-64 rounded border-2 border-accent p-2">
+      <div className="flex items-center gap-1">
+        <a href={"https://github.com/NPXInnovation/npxai-v2"}>
+          <GithubLogo
+            size={32}
+            className="rounded bg-primary p-1 hover:bg-primary/70"
+          />
+        </a>
+        <p className="font-bold">NPX Ai</p>
+      </div>
+
+      <ul>
+        <ul className="my-1.5 w-fit rounded bg-green-100 p-1 text-green-700 outline outline-1 outline-green-500 hover:bg-green-50">
+          <a href="https://github.com/NPXInnovation/xpress/pull/98">
+            <li className="flex font-medium text-green-500">Fixed AB#123</li>
+            <li className="flex text-green-500">
+              <ArrowElbowDownRight size={16} />
+              Build & Test
+            </li>
+            <li className="flex text-green-500">
+              <ArrowElbowDownRight size={16} />
+              Deploy
+            </li>
+          </a>
+        </ul>
+        <ul className="my-1.5 w-fit rounded bg-red-100 p-1 text-red-700 outline outline-1 outline-red-500 hover:bg-red-50">
+          <a href="https://github.com/NPXInnovation/xpress/pull/98">
+            <li className="flex font-medium text-yellow-500">Added AB#245</li>
+            <li className="flex text-green-500">
+              <ArrowElbowDownRight size={16} />
+              Build & Test
+            </li>
+            <li className="flex text-red-500">
+              <ArrowElbowDownRight size={16} />
+              Deploy
+            </li>
+          </a>
+        </ul>
+        <ul className="my-1.5 w-fit rounded bg-yellow-100 p-1 text-yellow-700 outline outline-1 outline-yellow-500 hover:bg-yellow-50">
+          <a href="https://github.com/NPXInnovation/xpress/pull/98">
+            <li className="flex font-medium text-yellow-500">Removed AB#332</li>
+            <li className="flex text-yellow-500">
+              <ArrowElbowDownRight size={16} />
+              Build
+            </li>
+          </a>
+        </ul>
+      </ul>
     </div>
   );
 };

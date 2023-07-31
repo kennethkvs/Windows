@@ -13,7 +13,7 @@ export const Sections = (props) => {
 
   return (
     <div className="m-1">
-      <div className="text-center">{props.name}</div>
+      <div className="text-center font-semibold">{props.name}</div>
       <div className={` ${columnVariants[props.cols]} grid gap-1`}>
         {props.data.map((data, index) => (
           <Status

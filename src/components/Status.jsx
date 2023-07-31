@@ -11,7 +11,7 @@ export const Status = (props) => {
     <div
       className={`${
         colorVariants[props.color]
-      } flex max-h-20 flex-col justify-evenly rounded text-center  outline outline-1`}
+      } flex max-h-20 flex-col justify-evenly rounded text-center outline outline-1`}
     >
       <p className="text-xs">{props.title}</p>
     </div>

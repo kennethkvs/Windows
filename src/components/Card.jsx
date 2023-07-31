@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import { Sections } from "./Sections";
 import { AzureStatus } from "./AzureStatus";
@@ -34,12 +34,28 @@ const envData = [
 ];
 
 export const Card = (props) => {
-  const [rotate, setRotate] = useState(false);
+  const [isRotate, setIsRotate] = useState(false);
+  const variants = {
+    open: { rotate: "0" },
+    closed: {
+      rotate: "-90deg",
+      margin: "0 -300px",
+    },
+  };
 
   return (
-    <div className="flex flex-col items-center">
-      {rotate && (
-        <motion.div className="mb-1 flex min-h-[700px] min-w-[800px] flex-col justify-evenly bg-background">
+    <motion.div
+      animate={isRotate ? "open" : "closed"}
+      variants={variants}
+      // transition={{ duration: 0.4 }}
+      className="flex flex-col items-center gap-2 drop-shadow"
+    >
+      {isRotate && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="mb-1 flex h-fit w-fit flex-col justify-evenly gap-2 rounded bg-secondary p-2"
+        >
           <div className="flex justify-evenly">
             <AzureStatus />
             <RepoStatus />
@@ -50,33 +66,27 @@ export const Card = (props) => {
         </motion.div>
       )}
       <motion.div
-        onClick={() => setRotate(!rotate)}
+        onClick={() => setIsRotate(!isRotate)}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        whileHover={{ scale: !rotate ? 1.1 : 1 }}
-        animate={{
-          transformOrigin: rotate ? "bottom left" : "",
-          rotate: rotate ? 360 : 270,
-          margin: rotate ? "0 10px 0 10px" : "0 -300px",
-          scale: rotate ? 1 : 1,
-        }}
+        whileHover={{ scale: !isRotate ? 1.1 : 1 }}
       >
-        <div className="flex min-h-[200px] min-w-[800px] border-separate flex-row rounded bg-background text-black">
+        <div className="flex min-h-[200px] min-w-[800px] border-separate flex-row rounded bg-secondary">
           <div className=" mb-12 ml-6 mr-6 mt-12 w-1/12 place-self-center text-center">
             <SectionHeader name={props.name} />
           </div>
-          <div className="w-3/12 border-l-2 border-black">
+          <div className="w-3/12 border-l-2 border-accent">
             <Sections name="Github Repo" cols="2" data={ghData} />
           </div>
-          <div className="w-3/12 border-l-2 border-black">
+          <div className="w-3/12 border-l-2 border-accent">
             <Sections name="Sprint #11" cols="2" data={ticketData} />
           </div>
-          <div className="w-5/12 border-l-2 border-black">
+          <div className="w-5/12 border-l-2 border-accent">
             {/* TODO: fix cols not working */}
             <Sections name="Environments" cols="3" data={envData} />
           </div>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };

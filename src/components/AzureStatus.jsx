@@ -5,41 +5,77 @@ import * as Progress from "@radix-ui/react-progress";
 
 export const AzureStatus = (url) => {
   return (
-    <div className="box-border h-64 w-64 border-4 p-4">
-      <a
-        href={
-          "https://portal.azure.com/?bundlingKind=DefaultPartitioner&configHash=Zze6Y9eHer_J&env=portal&helppanenewdesign=true&l=en.en-us&pageVersion=12.28.0.1591995.230714-1830#@NPXsandbox.onmicrosoft.com/resource/subscriptions/e5a9b327-74a2-4088-b8b9-c21ccea70b72/resourceGroups/rg-canadacentral-npxaiv2demo/overview"
-        }
-      >
-        <WindowsLogo size={32} />
-      </a>
-      <div className={"flex text-green-500"}>
-        <p>
-          <Ticket size={24} />
-        </p>
-        <p> Sprint Ticket #1</p>
+    <div className=" h-fill drop w-64 rounded border-2 border-accent p-2">
+      <div className="flex items-center gap-2">
+        <a
+          href={
+            "https://dev.azure.com/NPXInnovation/OPG%20Xpress/_boards/board/t/OPG%20Xpress%20Team/Backlog%20items"
+          }
+        >
+          <WindowsLogo
+            size={32}
+            className="rounded bg-primary p-1 hover:bg-primary/70"
+          />
+        </a>
+        <Progress.Root
+          className="relative h-4 w-full overflow-hidden rounded bg-white"
+          value={33}
+        >
+          <Progress.Indicator
+            className="ease-[cubic-bezier(0.65, 0, 0.35, 1)] h-full w-full bg-accent transition-transform duration-[660ms]"
+            style={{ transform: `translateX(-${100 - 33}%)` }}
+          />
+          <p>33%</p>
+        </Progress.Root>
       </div>
-      <div className={"flex text-red-500"}>
-        <p>
-          <Ticket size={24} />
-        </p>
-        <p> Sprint Ticket #2</p>
-      </div>
-      <div className={"flex text-yellow-500"}>
-        <p>
-          <Ticket size={24} />
-        </p>
-        <p> Sprint Ticket #3</p>
-      </div>
-      <Progress.Root
-        className="relative h-4 w-32 overflow-hidden bg-white"
-        value={33}
-      >
-        <Progress.Indicator
-          className="ease-[cubic-bezier(0.65, 0, 0.35, 1)] h-full w-full bg-yellow-400 transition-transform duration-[660ms]"
-          style={{ transform: `translateX(-${100 - 33}%)` }}
-        />
-      </Progress.Root>
+
+      <ul>
+        <li className=" text-green-500 hover:text-green-400">
+          <a
+            className="flex"
+            href="https://dev.azure.com/NPXInnovation/OPG%20Xpress/_sprints/backlog/OPG%20Xpress%20Team/OPG%20Xpress/Sprint%2019?workitem=18778"
+          >
+            <Ticket size={24} />
+            Sprint Ticket #1
+          </a>
+        </li>
+        <li className="flex text-yellow-500 hover:text-yellow-400">
+          <a
+            className="flex"
+            href="https://dev.azure.com/NPXInnovation/OPG%20Xpress/_sprints/backlog/OPG%20Xpress%20Team/OPG%20Xpress/Sprint%2019?workitem=18778"
+          >
+            <Ticket size={24} />
+            Sprint Ticket #2
+          </a>
+        </li>
+        <li className="flex text-red-500 hover:text-red-400">
+          <a
+            className="flex"
+            href="https://dev.azure.com/NPXInnovation/OPG%20Xpress/_sprints/backlog/OPG%20Xpress%20Team/OPG%20Xpress/Sprint%2019?workitem=18778"
+          >
+            <Ticket size={24} />
+            Sprint Ticket #3
+          </a>
+        </li>
+        <li className="flex text-red-500 hover:text-red-400">
+          <a
+            className="flex"
+            href="https://dev.azure.com/NPXInnovation/OPG%20Xpress/_sprints/backlog/OPG%20Xpress%20Team/OPG%20Xpress/Sprint%2019?workitem=18778"
+          >
+            <Ticket size={24} />
+            Sprint Ticket #4
+          </a>
+        </li>
+        <li className="flex text-red-500 hover:text-red-400">
+          <a
+            className="flex"
+            href="https://dev.azure.com/NPXInnovation/OPG%20Xpress/_sprints/backlog/OPG%20Xpress%20Team/OPG%20Xpress/Sprint%2019?workitem=18778"
+          >
+            <Ticket size={24} />
+            Sprint Ticket #5
+          </a>
+        </li>
+      </ul>
     </div>
   );
 };
