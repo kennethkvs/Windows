@@ -9,7 +9,7 @@ export const AzureStatus = (url) => {
       <div className="flex items-center gap-2">
         <a
           href={
-            "https://dev.azure.com/NPXInnovation/OPG%20Xpress/_boards/board/t/OPG%20Xpress%20Team/Backlog%20items"
+            "https://github.com/kennethkvs/Windows"
           }
         >
           <WindowsLogo
@@ -33,7 +33,7 @@ export const AzureStatus = (url) => {
         <li className=" text-green-500 hover:text-green-400">
           <a
             className="flex"
-            href="https://dev.azure.com/NPXInnovation/OPG%20Xpress/_sprints/backlog/OPG%20Xpress%20Team/OPG%20Xpress/Sprint%2019?workitem=18778"
+            href="https://github.com/kennethkvs/Windows"
           >
             <Ticket size={24} />
             Sprint Ticket #1
@@ -42,7 +42,7 @@ export const AzureStatus = (url) => {
         <li className="flex text-yellow-500 hover:text-yellow-400">
           <a
             className="flex"
-            href="https://dev.azure.com/NPXInnovation/OPG%20Xpress/_sprints/backlog/OPG%20Xpress%20Team/OPG%20Xpress/Sprint%2019?workitem=18778"
+            href="https://github.com/kennethkvs/Windows"
           >
             <Ticket size={24} />
             Sprint Ticket #2
@@ -51,7 +51,7 @@ export const AzureStatus = (url) => {
         <li className="flex text-red-500 hover:text-red-400">
           <a
             className="flex"
-            href="https://dev.azure.com/NPXInnovation/OPG%20Xpress/_sprints/backlog/OPG%20Xpress%20Team/OPG%20Xpress/Sprint%2019?workitem=18778"
+            href="https://github.com/kennethkvs/Windows"
           >
             <Ticket size={24} />
             Sprint Ticket #3
@@ -60,7 +60,7 @@ export const AzureStatus = (url) => {
         <li className="flex text-red-500 hover:text-red-400">
           <a
             className="flex"
-            href="https://dev.azure.com/NPXInnovation/OPG%20Xpress/_sprints/backlog/OPG%20Xpress%20Team/OPG%20Xpress/Sprint%2019?workitem=18778"
+            href="https://github.com/kennethkvs/Windows"
           >
             <Ticket size={24} />
             Sprint Ticket #4
@@ -69,7 +69,7 @@ export const AzureStatus = (url) => {
         <li className="flex text-red-500 hover:text-red-400">
           <a
             className="flex"
-            href="https://dev.azure.com/NPXInnovation/OPG%20Xpress/_sprints/backlog/OPG%20Xpress%20Team/OPG%20Xpress/Sprint%2019?workitem=18778"
+            href="https://github.com/kennethkvs/Windows"
           >
             <Ticket size={24} />
             Sprint Ticket #5

@@ -64,7 +64,7 @@ export const EnvironmentStatus = () => {
     <div className="flex rounded border-2 border-accent p-2 drop-shadow">
       <div className="flex flex-col">
         <div className="flex items-center gap-2">
-          <a href="https://portal.azure.com/#@NPXsandbox.onmicrosoft.com/resource/subscriptions/e5a9b327-74a2-4088-b8b9-c21ccea70b72/resourceGroups/rg-cc-xpress-demo/providers/microsoft.insights/components/xpress-demo-api/overview">
+          <a href="https://github.com/kennethkvs/Windows">
             <ChartLine
               size={32}
               className="rounded bg-primary p-1 hover:bg-primary/70"
@@ -78,7 +78,7 @@ export const EnvironmentStatus = () => {
 
       <div>
         <div className="flex items-center gap-2">
-          <a href="https://portal.azure.com/#@NPXsandbox.onmicrosoft.com/resource/subscriptions/e5a9b327-74a2-4088-b8b9-c21ccea70b72/resourceGroups/rg-cc-xpress-demo/providers/microsoft.insights/components/xpress-demo-api/overview">
+          <a href="https://github.com/kennethkvs/Windows">
             <ChartLine
               size={32}
               className="rounded bg-primary p-1 hover:bg-primary/70"
